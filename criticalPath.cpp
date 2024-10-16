@@ -1,18 +1,10 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-class comparetor{
-    public:
-    bool operator () ( pair<int,int> node1, pair<int,int> node2){
-        return node1.second > node2.second;
-    }
-};
-
 vector<vector<pair<int,int>>> graph (1000);//pair<nodeID, weight>
 vector<vector<int>> revGraph(1000);//revGraph[a][b] --> the node a is pointed to BY b
 
 vector<int> dist(1000, INT_MIN); //longest distance yet to each node from root
-bool visited[1000];
 vector<int> parent (1000, -1);
 
 //helper to add a node to graph and revGraph
